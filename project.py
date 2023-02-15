@@ -158,3 +158,17 @@ def OnSelected(event):
     #==================BUTTONS==============================
     btn_addcon = Button(ContactForm, text="Save",  bg="yellow", width=50, command=SubmitData)
     btn_addcon.grid(row=6, columnspan=2, pady=10)
+
+#============================FRAMES======================================
+Top = Frame(root, width=700, bd=1, relief=SOLID)
+Top.pack(side=TOP)
+Mid = Frame(root, width=700,  bg="sky blue")
+Mid.pack(side=TOP)
+MidLeft = Frame(Mid, width=400)
+MidLeft.pack(side=LEFT, pady=10)
+MidLeftPadding = Frame(Mid, width=370, bg="white")
+MidLeftPadding.pack(side=LEFT)
+MidRight = Frame(Mid, width=100)
+MidRight.pack(side=RIGHT, pady=10)
+TableMargin = Frame(root, width=500)
+TableMargin.pack(side=TOP)
