@@ -199,6 +199,15 @@ def AddNewWindow():
     if 'UpdateWindow' in globals():
         UpdateWindow.destroy()
 
+    #===================FRAMES==============================
+    FormTitle = Frame(NewWindow)
+    FormTitle.pack(side=TOP)
+    ContactForm = Frame(NewWindow)
+    ContactForm.pack(side=TOP, pady=10)
+    RadioGroup = Frame(ContactForm)
+    Male = Radiobutton(RadioGroup, text="Male", variable=GENDER, value="Male",  font=('arial', 16)).pack(side=LEFT)
+    Female = Radiobutton(RadioGroup, text="Female", variable=GENDER, value="Female",  font=('arial', 16)).pack(side=LEFT)
+    
 
     #===================ENTRY===============================
     firstname = Entry(ContactForm, textvariable=FIRSTNAME, font=('georgia', 18))
