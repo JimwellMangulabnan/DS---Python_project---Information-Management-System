@@ -142,5 +142,17 @@ def OnSelected(event):
     lbl_contact = Label(ContactForm, text="Contact", font=('arial', 16), bd=5)
     lbl_contact.grid(row=5, sticky=W)
 
+    #===================ENTRY===============================
+    firstname = Entry(ContactForm, textvariable=FIRSTNAME, font=('georgia', 18))
+    firstname.grid(row=0, column=1)
+    lastname = Entry(ContactForm, textvariable=LASTNAME, font=('georgia', 18))
+    lastname.grid(row=1, column=1)
+    RadioGroup.grid(row=2, column=1)
+    age = Entry(ContactForm, textvariable=AGE,  font=('georgia', 18))
+    age.grid(row=3, column=1)
+    address = Entry(ContactForm, textvariable=ADDRESS,  font=('georgia', 18))
+    address.grid(row=4, column=1)
+    contact = Entry(ContactForm, textvariable=CONTACT,  font=('georgia', 18))
+    contact.grid(row=5, column=1)
     
         
