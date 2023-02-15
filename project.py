@@ -155,4 +155,6 @@ def OnSelected(event):
     contact = Entry(ContactForm, textvariable=CONTACT,  font=('georgia', 18))
     contact.grid(row=5, column=1)
     
-        
+    #==================BUTTONS==============================
+    btn_addcon = Button(ContactForm, text="Save",  bg="yellow", width=50, command=SubmitData)
+    btn_addcon.grid(row=6, columnspan=2, pady=10)
