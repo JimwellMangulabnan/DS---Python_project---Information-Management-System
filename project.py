@@ -172,3 +172,7 @@ MidRight = Frame(Mid, width=100)
 MidRight.pack(side=RIGHT, pady=10)
 TableMargin = Frame(root, width=500)
 TableMargin.pack(side=TOP)
+
+#============================LABELS======================================
+lbl_title = Label(Top, text="Information Management System", font=('georgia', 26), width=700)
+lbl_title.pack(fill=X)
