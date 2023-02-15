@@ -176,3 +176,9 @@ TableMargin.pack(side=TOP)
 #============================LABELS======================================
 lbl_title = Label(Top, text="Information Management System", font=('georgia', 26), width=700)
 lbl_title.pack(fill=X)
+
+#============================BUTTONS=====================================
+btn_add = Button(MidLeft, text="+ ADD NEW", bg="#66ff66", font=('georgia', 12), command=AddNewWindow)
+btn_add.pack()
+btn_delete = Button(MidRight, text="DELETE", bg="red", font=('georgia', 12), command=DeleteData)
+btn_delete.pack(side=RIGHT)
