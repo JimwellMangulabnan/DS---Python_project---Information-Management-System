@@ -142,6 +142,27 @@ def OnSelected(event):
     lbl_contact = Label(ContactForm, text="Contact", font=('arial', 16), bd=5)
     lbl_contact.grid(row=5, sticky=W)
 
+     #===================ENTRY===============================
+    firstname = Entry(ContactForm, textvariable=FIRSTNAME, font=('arial', 14))
+    firstname.grid(row=0, column=1)
+    lastname = Entry(ContactForm, textvariable=LASTNAME, font=('arial', 14))
+    lastname.grid(row=1, column=1)
+    RadioGroup.grid(row=2, column=1)
+    age = Entry(ContactForm, textvariable=AGE,  font=('arial', 14))
+    age.grid(row=3, column=1)
+    address = Entry(ContactForm, textvariable=ADDRESS,  font=('arial', 14))
+    address.grid(row=4, column=1)
+    contact = Entry(ContactForm, textvariable=CONTACT,  font=('arial', 14))
+    contact.grid(row=5, column=1)
+    
+
+    #==================BUTTONS==============================
+    btn_updatecon = Button(ContactForm, text="Update", width=50, command=UpdateData)
+    btn_updatecon.grid(row=6, columnspan=2, pady=10)
+
+
+    
+
     #===================ENTRY===============================
     firstname = Entry(ContactForm, textvariable=FIRSTNAME, font=('georgia', 18))
     firstname.grid(row=0, column=1)
@@ -182,3 +203,34 @@ btn_add = Button(MidLeft, text="+ ADD NEW", bg="#66ff66", font=('georgia', 12), 
 btn_add.pack()
 btn_delete = Button(MidRight, text="DELETE", bg="red", font=('georgia', 12), command=DeleteData)
 btn_delete.pack(side=RIGHT)
+
+#============================TABLES======================================
+scrollbarx = Scrollbar(TableMargin, orient=HORIZONTAL)
+scrollbary = Scrollbar(TableMargin, orient=VERTICAL)
+tree = ttk.Treeview(TableMargin, columns=("MemberID", "Firstname", "Lastname", "Gender", "Age", "Address", "Contact"), height=300, selectmode="extended", yscrollcommand=scrollbary.set, xscrollcommand=scrollbarx.set)
+scrollbary.config(command=tree.yview)
+scrollbary.pack(side=RIGHT, fill=Y)
+scrollbarx.config(command=tree.xview)
+scrollbarx.pack(side=BOTTOM, fill=X)
+tree.heading('MemberID', text="MemberID", anchor=W)
+tree.heading('Firstname', text="Firstname", anchor=W)
+tree.heading('Lastname', text="Lastname", anchor=W)
+tree.heading('Gender', text="Gender", anchor=W)
+tree.heading('Age', text="Age", anchor=W)
+tree.heading('Address', text="Address", anchor=W)
+tree.heading('Contact', text="Contact", anchor=W)
+tree.column('#0', stretch=NO, minwidth=0, width=0)
+tree.column('#1', stretch=NO, minwidth=0, width=0)
+tree.column('#2', stretch=NO, minwidth=0, width=80)
+tree.column('#3', stretch=NO, minwidth=0, width=120)
+tree.column('#4', stretch=NO, minwidth=0, width=90)
+tree.column('#5', stretch=NO, minwidth=0, width=80)
+tree.column('#6', stretch=NO, minwidth=0, width=120)
+tree.column('#7', stretch=NO, minwidth=0, width=120)
+tree.pack()
+tree.bind('<Double-Button-1>', OnSelected)
+
+#============================INITIALIZATION==============================
+if __name__ == '__main__':
+    Database()
+    root.mainloop()
