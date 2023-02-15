@@ -86,4 +86,34 @@ def UpdateData():
         AGE.set("")
         ADDRESS.set("")
         CONTACT.set("")
+
+def OnSelected(event):
+    global mem_id, UpdateWindow
+    curItem = tree.focus()
+    contents =(tree.item(curItem))
+    selecteditem = contents['values']
+    mem_id = selecteditem[0]
+    FIRSTNAME.set("")
+    LASTNAME.set("")
+    GENDER.set("")
+    AGE.set("")
+    ADDRESS.set("")
+    CONTACT.set("")
+    FIRSTNAME.set(selecteditem[1])
+    LASTNAME.set(selecteditem[2])
+    AGE.set(selecteditem[4])
+    ADDRESS.set(selecteditem[5])
+    CONTACT.set(selecteditem[6])
+    UpdateWindow = Toplevel()
+    UpdateWindow.title("Information Management System")
+    width = 400
+    height = 500
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    x = ((screen_width/2) + 450) - (width/2)
+    y = ((screen_height/2) + 20) - (height/2)
+    UpdateWindow.resizable(0, 0)
+    UpdateWindow.geometry("%dx%d+%d+%d" % (width, height, x, y))
+    if 'NewWindow' in globals():
+        NewWindow.destroy()
         
