@@ -161,7 +161,7 @@ def OnSelected(event):
     btn_updatecon.grid(row=6, columnspan=2, pady=10)
 
 
-    def DeleteData():
+def DeleteData():
     if not tree.selection():
        result = tkMessageBox.showwarning('', 'Please Select Something First!', icon="warning")
     else:
@@ -177,6 +177,28 @@ def OnSelected(event):
             conn.commit()
             cursor.close()
             conn.close()
+
+def AddNewWindow():
+    global NewWindow
+    FIRSTNAME.set("")
+    LASTNAME.set("")
+    GENDER.set("")
+    AGE.set("")
+    ADDRESS.set("")
+    CONTACT.set("")
+    NewWindow = Toplevel()
+    NewWindow.title("Information Management System")
+    width = 500
+    height = 350
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    x = ((screen_width/2) - 455) - (width/2)
+    y = ((screen_height/2) + 20) - (height/2)
+    NewWindow.resizable(0, 0)
+    NewWindow.geometry("%dx%d+%d+%d" % (width, height, x, y))
+    if 'UpdateWindow' in globals():
+        UpdateWindow.destroy()
+
 
     #===================ENTRY===============================
     firstname = Entry(ContactForm, textvariable=FIRSTNAME, font=('georgia', 18))
